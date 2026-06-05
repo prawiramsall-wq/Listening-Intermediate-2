@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Guide Adventure - Listening Exercise</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+    background:#f5f7fb;
+}
+
+h1{
+    text-align:center;
+    color:#2c3e50;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-top:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.word-bank{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.word{
+    background:#4361ee;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:grab;
+    font-weight:bold;
+}
+
+.question{
+    margin:18px 0;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.dropzone{
+    display:inline-block;
+    min-width:130px;
+    min-height:35px;
+    border:2px dashed #4361ee;
+    border-radius:8px;
+    text-align:center;
+    background:white;
+    vertical-align:middle;
+}
+
+.correct{
+    background:#06d6a0 !important;
+    color:white;
+    border-color:#06d6a0 !important;
+}
+
+.wrong{
+    background:#ef233c !important;
+    color:white;
+    border-color:#ef233c !important;
+}
+
+button{
+    background:#4361ee;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    margin:5px;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+#result{
+    margin-top:25px;
+    font-size:26px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.tf-feedback{
+    margin-left:10px;
+    font-weight:bold;
+}
+
+audio{
+    margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<h1>🎧 Tour Guide Adventure</h1>
+
+<audio controls style="width:100%;">
+<source src="2L2-dianas-new-job.mp3" type="audio/mpeg">
+</audio>
+
+<p><b>Instructions:</b> Listen carefully and complete both exercises.</p>
+
+<div class="card">
+
+<h2>Part 1: Drag the Words</h2>
+
+<div class="word-bank">
+
+<div class="word" draggable="true" id="tourists">tourists</div>
+<div class="word" draggable="true" id="canyon">canyon</div>
+<div class="word" draggable="true" id="hotel">hotel</div>
+<div class="word" draggable="true" id="guide">guide</div>
+<div class="word" draggable="true" id="lunch">lunch</div>
+<div class="word" draggable="true" id="sandwich">sandwich</div>
+<div class="word" draggable="true" id="five">five</div>
+<div class="word" draggable="true" id="itinerary">itinerary</div>
+<div class="word" draggable="true" id="museum">museum</div>
+<div class="word" draggable="true" id="aquarium">aquarium</div>
+
+</div>
+
+<div class="question">
+1. Diana enjoys driving
+<span class="dropzone" data-answer="tourists"></span>
+around.
+</div>
+
+<div class="question">
+2. Today, Diana took the group to the
+<span class="dropzone" data-answer="canyon"></span>.
+</div>
+
+<div class="question">
+3. Some people decided to stay at the
+<span class="dropzone" data-answer="hotel"></span>
+because they were tired.
+</div>
+
+<div class="question">
+4. Diana was not the only
+<span class="dropzone" data-answer="guide"></span>
+with the tourist group.
+</div>
+
+<div class="question">
+5. Diana and Mark did not have time for
+<span class="dropzone" data-answer="lunch"></span>.
+</div>
+
+<div class="question">
+6. Later in the day, they only had time to grab a
+<span class="dropzone" data-answer="sandwich"></span>.
+</div>
+
+<div class="question">
+7. Diana got back to the hotel at
+<span class="dropzone" data-answer="five"></span>
+o'clock.
+</div>
+
+<div class="question">
+8. Diana discussed the next day's
+<span class="dropzone" data-answer="itinerary"></span>
+with the group leader.
+</div>
+
+<div class="question">
+9. In the morning, the tourists will visit the city
+<span class="dropzone" data-answer="museum"></span>.
+</div>
+
+<div class="question">
+10. After lunch, they will go to the
+<span class="dropzone" data-answer="aquarium"></span>.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Part 2: True or False</h2>
+
+<div class="question">
+1. Diana dislikes her new job.
+<label><input type="radio" name="tf1" value="True"> True</label>
+<label><input type="radio" name="tf1" value="False"> False</label>
+<span id="fb1" class="tf-feedback"></span>
+</div>
+
+<div class="question">
+2. The tourist bus was completely full.
+<label><input type="radio" name="tf2" value="True"> True</label>
+<label><input type="radio" name="tf2" value="False"> False</label>
+<span id="fb2" class="tf-feedback"></span>
+</div>
+
+<div class="question">
+3. Some tourists stayed at the hotel because they were tired.
+<label><input type="radio" name="tf3" value="True"> True</label>
+<label><input type="radio" name="tf3" value="False"> False</label>
+<span id="fb3" class="tf-feedback"></span>
+</div>
+
+<div class="question">
+4. Mark helped Diana during the trip.
+<label><input type="radio" name="tf4" value="True"> True</label>
+<label><input type="radio" name="tf4" value="False"> False</label>
+<span id="fb4" class="tf-feedback"></span>
+</div>
+
+<div class="question">
+5. Diana and Mark had a full lunch at the café.
+<label><input type="radio" name="tf5" value="True"> True</label>
+<label><input type="radio" name="tf5" value="False"> False</label>
+<span id="fb5" class="tf-feedback"></span>
+</div>
+
+<div class="question">
+6. The group returned to the hotel at five o'clock.
+<label><input type="radio" name="tf6" value="True"> True</label>
+<label><input type="radio" name="tf6" value="False"> False</label>
+<span id="fb6" class="tf-feedback"></span>
+</div>
+
+<div class="question">
+7. The tourists will visit the aquarium before the museum tomorrow.
+<label><input type="radio" name="tf7" value="True"> True</label>
+<label><input type="radio" name="tf7" value="False"> False</label>
+<span id="fb7" class="tf-feedback"></span>
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:20px;">
+<button onclick="checkAnswers()">Check Answers</button>
+<button onclick="location.reload()">Try Again</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+
+const draggables=document.querySelectorAll('.word');
+const dropzones=document.querySelectorAll('.dropzone');
+
+draggables.forEach(item=>{
+item.addEventListener('dragstart',e=>{
+e.dataTransfer.setData('text',item.id);
+});
+});
+
+dropzones.forEach(zone=>{
+zone.addEventListener('dragover',e=>{
+e.preventDefault();
+});
+
+zone.addEventListener('drop',e=>{
+e.preventDefault();
+const id=e.dataTransfer.getData('text');
+zone.innerHTML=id;
+zone.dataset.user=id;
+});
+});
+
+function checkAnswers(){
+
+let score=0;
+
+dropzones.forEach(zone=>{
+
+if(zone.dataset.user===zone.dataset.answer){
+
+zone.classList.add("correct");
+score++;
+
+}else{
+
+zone.classList.add("wrong");
+
+zone.innerHTML=
+(zone.dataset.user || "blank")
++"<br><small>✓ "
++zone.dataset.answer+
+"</small>";
+
+}
+
+});
+
+const answers={
+tf1:"False",
+tf2:"False",
+tf3:"True",
+tf4:"True",
+tf5:"False",
+tf6:"True",
+tf7:"False"
+};
+
+for(let key in answers){
+
+const selected=document.querySelector(
+`input[name="${key}"]:checked`
+);
+
+const feedback=document.getElementById(
+"fb"+key.replace("tf","")
+);
+
+if(selected){
+
+if(selected.value===answers[key]){
+
+feedback.innerHTML="✓ Correct";
+feedback.style.color="green";
+score++;
+
+}else{
+
+feedback.innerHTML="Correct: "+answers[key];
+feedback.style.color="red";
+
+}
+
+}else{
+
+feedback.innerHTML="Correct: "+answers[key];
+feedback.style.color="red";
+
+}
+
+}
+
+let percent=Math.round((score/17)*100);
+
+let message="";
+
+if(percent>=90){
+message="🏆 Excellent!";
+}else if(percent>=75){
+message="🎉 Great Job!";
+}else if(percent>=60){
+message="👍 Good Work!";
+}else{
+message="📚 Keep Practicing!";
+}
+
+document.getElementById("result").innerHTML=
+`
+${message}
+<br><br>
+Score: ${score}/17
+<br>
+Percentage: ${percent}%
+`;
+
+}
+
+</script>
+
+</body>
+</html>
